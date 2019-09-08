@@ -1,5 +1,5 @@
 <template>
-    <form @submit.prevent="addToArray">
+    <form @submit.prevent="pushNewElem">
         <input type="text" v-model="newElem" required>
         <button type="submit">Add</button>
     </form>
@@ -13,9 +13,9 @@ export default {
     }
   },
   methods: {
-    addToArray () {
+    pushNewElem () {
       if (!this.newElem.trim()) return
-      this.$store.state.testArray.push(this.newElem)
+      this.$store.commit('addToArray', this.newElem)
       this.newElem = ''
     }
   }

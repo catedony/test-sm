@@ -19,7 +19,7 @@ export default {
   },
   methods: {
     removeElem () {
-      this.$store.state.testArray.splice(this.index, 1)
+      this.$store.commit('removeFromArray', this.index)
     }
   }
 }

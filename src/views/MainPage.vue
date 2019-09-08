@@ -13,7 +13,7 @@
 import CounterDisplay from '@/components/CounterDisplay.vue'
 
 export default {
-  name: 'main',
+  name: 'main-page',
   components: {
     CounterDisplay
   }

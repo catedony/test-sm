@@ -9,7 +9,7 @@
 export default {
   methods: {
     updateCounter (val) {
-      this.$store.state.testCount += val
+      this.$store.commit('updateCount', val)
     }
   }
 }

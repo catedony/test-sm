@@ -9,9 +9,14 @@ export default new Vuex.Store({
     testArray: ['1', '2', '3']
   },
   mutations: {
-
-  },
-  actions: {
-
+    updateCount (state, val) {
+      state.testCount += val
+    },
+    removeFromArray (state, index) {
+      state.testArray.splice(index, 1)
+    },
+    addToArray (state, elem) {
+      state.testArray.push(elem)
+    }
   }
 })
