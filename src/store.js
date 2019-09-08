@@ -6,7 +6,7 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     testCount: 0,
-    testArray: ['1', '2', '3']
+    testArray: []
   },
   mutations: {
     updateCount (state, val) {

@@ -1,21 +1,33 @@
 <template>
   <main class="main">
-    <counter-display />
-    <div>
-      <div>Array length:</div>
-      <div>{{ this.$store.state.testArray.length }}</div>
-    </div>
+    <value-display :title="titles.count" :value="count" />
+    <value-display :title="titles.arrayLength" :value="arrayLength" />
   </main>
 </template>
 
 <script>
-// @ is an alias to /src
-import CounterDisplay from '@/components/CounterDisplay.vue'
+
+import ValueDisplay from '@/components/ValueDisplay.vue'
 
 export default {
-  name: 'main-page',
+  data: function () {
+    return {
+      titles: {
+        count: 'Count',
+        arrayLength: 'Array length'
+      }
+    }
+  },
+  computed: {
+    arrayLength () {
+      return this.$store.state.testArray.length
+    },
+    count () {
+      return this.$store.state.testCount
+    }
+  },
   components: {
-    CounterDisplay
+    ValueDisplay
   }
 }
 </script>

@@ -1,18 +1,35 @@
 <template>
   <main class="count">
-    <counter-display />
-    <counter-controls />
+    <value-display :title="'Count'" :value="count" />
+    <div>
+      <button class="count__btn btn" @click="updateCount(1)">+</button>
+      <button class="count__btn btn" @click="updateCount(-1)">-</button>
+    </div>
   </main>
 </template>
 
 <script>
-import CounterDisplay from '@/components/CounterDisplay.vue'
-import CounterControls from '@/components/CounterControls.vue'
+import ValueDisplay from '@/components/ValueDisplay.vue'
 export default {
-  name: 'count',
+  computed: {
+    count () {
+      return this.$store.state.testCount
+    }
+  },
   components: {
-    CounterDisplay,
-    CounterControls
+    ValueDisplay
+  },
+  methods: {
+    updateCount (val) {
+      this.$store.commit('updateCount', val)
+    }
   }
 }
 </script>
+
+<style scoped>
+.count__btn {
+  width: 30px;
+  margin: 0 10px;
+}
+</style>

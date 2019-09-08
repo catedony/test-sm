@@ -12,17 +12,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'main',
       component: Main
     },
     {
       path: '/test-count',
-      name: 'count',
       component: Count
     },
     {
       path: '/test-array',
-      name: 'array',
       component: Array
     }
   ]
