@@ -1,4 +1,4 @@
-# sm-test
+# test-sm
 
 ## Project setup
 ```
